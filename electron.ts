@@ -10,7 +10,9 @@ function createWindow(): void {
             nodeIntegration: false
         }
     });
-    win.loadFile(path.join(__dirname, "../index.html"));
+    win.loadFile(
+        path.join(__dirname, "../frontend/dist/index.html")
+    );
 }
 
 app.whenReady().then(() => {

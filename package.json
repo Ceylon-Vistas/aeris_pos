@@ -1,11 +1,12 @@
 {
-  "name": "electron",
+  "name": "aeris_pos",
   "version": "1.0.0",
   "main": "dist/electron.js",
   "scripts": {
     "build": "tsc",
-    "start": "npm run build && electron .",
-    "dist": "npm run build && electron-builder"
+    "frontend": "cd frontend && npm run build",
+    "start": "npm run frontend && npm run build && electron .",
+    "dist": "npm run frontend && npm run build && electron-builder"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",
@@ -14,11 +15,11 @@
     "typescript": "^7.0.2"
   },
   "build": {
-    "appId": "com.aeris_pos.app",
+    "appId": "com.aeris.pos",
     "productName": "AERIS POS",
     "files": [
       "dist/**/*",
-      "index.html",
+      "frontend/dist/**/*",
       "package.json"
     ],
     "win": {
